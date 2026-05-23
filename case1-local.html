@@ -1,0 +1,750 @@
+<!--
+====================================================
+案1: 親しみ × 実直 × 地域
+====================================================
+コンセプト: 「地元で52年、誠実に積み上げる建設業」
+ターゲット重心: 地元住民・地元業者・自治体担当者
+配色: 生成り紙 #f5efe4 / ディープグリーン #2d4a3e / 赤茶 #a64a2a
+フォント: Noto Serif JP(見出し 600) + Noto Sans JP(本文)
+狙い: 余白・温度・親密さ。罫線は細く、写真と文字を交互配置
+====================================================
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>竹中建設株式会社 — 案1 地域実直</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f5efe4;
+    --paper-2: #ebe3d2;
+    --green: #355545;
+    --green-2: #4a6b5a;
+    --rust: #e07a3a;
+    --ink: #28231e;
+    --muted: #6b6258;
+    --rule: rgba(40,35,30,0.14);
+    --rule-strong: rgba(40,35,30,0.45);
+    --serif: 'Noto Serif JP', 'Yu Mincho', serif;
+    --sans: 'Noto Sans JP', system-ui, sans-serif;
+  }
+  *,*::before,*::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  html { scroll-behavior: smooth; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1,h2,h3,h4 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.02em; margin: 0; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== ヘッダー固定 ===== */
+  .header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245,239,228,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-logo-img { height: 42px; width: auto; display: block; }
+  .brand-text-wrap { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-mark {
+    font-family: var(--serif); font-size: 17px; font-weight: 700;
+    letter-spacing: 0.1em; color: var(--green);
+  }
+  .brand-sub { font-size: 10px; color: var(--muted); letter-spacing: 0.15em; }
+  .nav { display: flex; gap: 28px; align-items: center; }
+  .nav a {
+    font-size: 13px; color: var(--ink);
+    padding: 6px 0; border-bottom: 1px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .nav a:hover { color: var(--rust); border-bottom-color: var(--rust); }
+  .nav-cta {
+    padding: 9px 18px; background: var(--green); color: var(--paper);
+    border-radius: 999px; font-size: 12px; letter-spacing: 0.08em;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--rust); border-bottom-color: transparent; }
+  .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 6px; }
+  .nav-toggle svg { width: 24px; height: 24px; stroke: var(--ink); }
+
+  /* ===== ヒーロー ===== */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    color: var(--rust); font-size: 12px; letter-spacing: 0.3em;
+    font-weight: 700; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 4.8vw, 60px);
+    line-height: 1.25; color: var(--green);
+    margin: 0 0 24px;
+  }
+  .hero-actions {
+    display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--rust);
+    border-bottom: 3px solid var(--rust); padding-bottom: 2px;
+  }
+  .hero-lead {
+    font-size: 16px; line-height: 2.1; color: var(--ink);
+    max-width: 460px;
+  }
+  .hero-meta {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 32px;
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .hero-meta dt {
+    font-size: 11px; letter-spacing: 0.18em; color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .hero-meta dd {
+    font-family: var(--serif); font-size: 28px; font-weight: 600;
+    color: var(--green); margin: 0; line-height: 1;
+  }
+  .hero-meta dd .u { font-size: 13px; color: var(--rust); margin-left: 6px; font-family: var(--sans); }
+
+  /* placeholder (写真枠) */
+  .ph {
+    position: relative; background: var(--paper-2);
+    overflow: hidden; border-radius: 20px;
+    border: 1px solid var(--rule);
+    background-image:
+      repeating-linear-gradient(135deg, rgba(45,74,62,0.05) 0 14px, transparent 14px 28px);
+  }
+  .ph::after {
+    content: attr(data-label);
+    position: absolute; inset: auto 16px 16px auto;
+    font-size: 11px; letter-spacing: 0.15em; color: var(--muted);
+    background: var(--paper); padding: 6px 10px; border-radius: 999px;
+    border: 1px solid var(--rule);
+  }
+  .hero-photo { height: 520px; }
+
+  /* ===== セクション共通 ===== */
+  section { padding: 96px 0; }
+  .sec-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 56px; gap: 24px; flex-wrap: wrap;
+  }
+  .sec-head .sec-num {
+    font-family: var(--serif); color: var(--rust); font-size: 14px;
+    letter-spacing: 0.25em; font-weight: 600;
+  }
+  .sec-head h2 {
+    font-size: clamp(28px, 4vw, 44px); color: var(--green);
+    margin-top: 8px; line-height: 1.3;
+  }
+  .sec-head .sec-sub {
+    max-width: 360px; font-size: 14px; color: var(--muted);
+    line-height: 1.9; text-align: right;
+  }
+
+  /* ===== 強み (3) ===== */
+  .strengths {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .strength {
+    padding: 36px 32px;
+    background: var(--paper-2);
+    border-radius: 20px;
+    border: 1px solid var(--rule);
+  }
+  .strength .num {
+    font-family: var(--serif); color: var(--rust); font-size: 13px;
+    letter-spacing: 0.25em; font-weight: 600; margin-bottom: 16px;
+  }
+  .strength h3 {
+    font-size: 22px; color: var(--green); line-height: 1.45; margin-bottom: 14px;
+  }
+  .strength p {
+    margin: 0; font-size: 14px; line-height: 2; color: var(--ink);
+  }
+  .strength .ico {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--green); color: #fff;
+    display: grid; place-items: center;
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  /* ===== 事業内容 (5) ===== */
+  .services { background: var(--paper-2); padding: 96px 0; }
+  .service-list {
+    display: grid; gap: 24px;
+  }
+  .service {
+    display: grid; grid-template-columns: 64px 1fr 280px;
+    gap: 32px; align-items: center;
+    padding: 28px 32px;
+    background: var(--paper); border-radius: 20px;
+    border: 1px solid var(--rule);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(45,74,62,0.08);
+  }
+  .service .s-num {
+    font-family: var(--serif); font-size: 36px; color: var(--rust);
+    font-weight: 600; line-height: 1;
+  }
+  .service h3 {
+    font-size: 22px; color: var(--green); margin-bottom: 8px;
+  }
+  .service .s-en {
+    font-size: 11px; color: var(--muted); letter-spacing: 0.2em;
+  }
+  .service p {
+    margin: 12px 0 0; font-size: 14px; line-height: 1.95; color: var(--ink);
+  }
+  .service .s-tags {
+    display: flex; flex-wrap: wrap; gap: 6px; align-self: start;
+  }
+  .service .s-tags span {
+    font-size: 11px; color: var(--green); background: var(--paper-2);
+    padding: 5px 11px; border-radius: 999px; border: 1px solid var(--rule);
+  }
+
+  /* ===== 実績 ===== */
+  .works-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .work .work-ph { height: 220px; border-radius: 16px; margin-bottom: 16px; }
+  .work .work-meta {
+    display: flex; gap: 12px; font-size: 11px;
+    color: var(--rust); letter-spacing: 0.18em; margin-bottom: 6px;
+  }
+  .work .work-meta .y { color: var(--muted); }
+  .work h3 {
+    font-size: 17px; color: var(--ink); line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .work .work-desc { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.8; }
+
+  /* ===== 採用 ===== */
+  .recruit { background: var(--paper-2); color: var(--ink); padding: 110px 0; border-top: 4px solid var(--green); }
+  .recruit .sec-num { color: var(--rust); }
+  .recruit h2 { color: var(--green); }
+  .recruit .sec-sub { color: var(--muted); }
+  .recruit-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px;
+    align-items: start;
+  }
+  .recruit-msg p {
+    font-family: var(--serif); font-size: 22px; line-height: 2;
+    font-weight: 500; margin: 0 0 24px; color: var(--ink);
+  }
+  .recruit-msg .sub {
+    font-family: var(--sans); font-size: 15px; line-height: 2;
+    color: var(--muted); margin: 0;
+  }
+  .jobs { display: grid; gap: 14px; }
+  .job {
+    padding: 22px 24px; border-radius: 16px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    transition: background .2s, border-color .2s;
+  }
+  .job:hover { border-color: var(--green); }
+  .job .job-tag {
+    display: inline-block; font-size: 11px; letter-spacing: 0.18em;
+    color: var(--rust); margin-bottom: 8px;
+  }
+  .job h4 {
+    font-family: var(--serif); font-size: 19px; margin: 0 0 6px;
+    color: var(--green);
+  }
+  .job p { margin: 0; font-size: 13px; line-height: 1.9; color: var(--muted); }
+
+  /* ===== 会社概要 ===== */
+  .profile-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px;
+  }
+  .profile-ph { height: 380px; border-radius: 20px; }
+  .profile-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .profile-table tr { border-bottom: 1px solid var(--rule); }
+  .profile-table th {
+    text-align: left; font-weight: 500; padding: 16px 0;
+    color: var(--rust); width: 130px; font-size: 12px;
+    letter-spacing: 0.15em; vertical-align: top;
+  }
+  .profile-table td { padding: 16px 0; line-height: 1.85; color: var(--ink); }
+
+  /* ===== CTA ===== */
+  .cta {
+    background: var(--paper-2); padding: 80px 0;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .cta-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center;
+  }
+  .cta h2 {
+    font-size: clamp(28px, 3.8vw, 40px); color: var(--green);
+    line-height: 1.4;
+  }
+  .cta p { color: var(--muted); margin: 16px 0 0; }
+  .cta-actions { display: flex; flex-direction: column; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: space-between;
+    padding: 18px 26px; border-radius: 999px;
+    background: var(--green); color: var(--paper);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.05em;
+    transition: background .2s, transform .2s;
+  }
+  .btn:hover { background: var(--rust); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--green);
+    border: 1px solid var(--green);
+  }
+  .btn-outline:hover { background: var(--green); color: var(--paper); }
+  .btn .arrow { margin-left: 14px; }
+
+  /* ===== フッター ===== */
+  footer {
+    padding: 48px 0 32px; background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    margin-bottom: 32px;
+  }
+  .footer-grid h4 {
+    font-size: 12px; letter-spacing: 0.18em; color: var(--rust);
+    font-family: var(--sans); font-weight: 600; margin-bottom: 12px;
+  }
+  .footer-grid p, .footer-grid li {
+    font-size: 13px; color: var(--muted); line-height: 1.95; margin: 0;
+  }
+  .footer-grid ul { list-style: none; padding: 0; margin: 0; }
+  .footer-grid ul a { color: var(--ink); }
+  .footer-grid ul a:hover { color: var(--rust); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px; border-top: 1px solid var(--rule);
+    font-size: 12px; color: var(--muted);
+  }
+  .ig-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--green); font-weight: 500;
+  }
+  .ig-link:hover { color: var(--rust); }
+
+  /* ===== スクロール演出 ===== */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 880px) {
+    section { padding: 64px 0; }
+    .hero { padding: 48px 0; }
+    .hero-grid, .recruit-grid, .profile-grid, .cta-grid {
+      grid-template-columns: 1fr; gap: 32px;
+    }
+    .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+    .hero-photo { height: 280px; }
+    .sec-head { flex-direction: column; align-items: flex-start; }
+    .sec-head .sec-sub { text-align: left; max-width: 100%; }
+    .strengths { grid-template-columns: 1fr; gap: 16px; }
+    .service {
+      grid-template-columns: 48px 1fr; gap: 16px; padding: 22px;
+    }
+    .service .s-tags { grid-column: 1 / -1; margin-top: 4px; }
+    .works-grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .nav.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 68px; right: 0; left: 0;
+      background: var(--paper); padding: 24px;
+      border-bottom: 1px solid var(--rule); gap: 18px;
+    }
+    .nav-toggle { display: block; }
+    .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 10px; }
+    .profile-table th { width: 100px; font-size: 11px; }
+  }
+</style>
+</head>
+<body data-design="case1">
+
+<!-- ====== ヘッダー ====== -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <img src="assets/logo-mark-t.png" alt="竹中建設" class="brand-logo-img" />
+      <span class="brand-text-wrap">
+        <span class="brand-mark">竹中建設</span>
+        <span class="brand-sub">since 1974 / 神栖</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#strengths">私たちの強み</a>
+      <a href="#services">事業内容</a>
+      <a href="#works">施工実績</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#profile">会社概要</a>
+      <a href="#contact" class="nav-cta">お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ====== ヒーロー ====== -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">茨城・神栖 / 総合土木建設</div>
+      <h1>地に足をつけて、<em>五十二年</em>。</h1>
+      <p class="hero-lead">
+        利根川の河口、鹿島の海。この土地で、川と道と暮らしの基礎を、地元の手で支えてきました。派手な仕事ではないけれど、毎朝の「当たり前」を、ちゃんと残す。それが、私たち竹中建設の仕事です。
+      </p>
+      <dl class="hero-meta">
+        <div><dt>創業</dt><dd>1974<span class="u">年</span></dd></div>
+        <div><dt>事業領域</dt><dd>5<span class="u">分野</span></dd></div>
+        <div><dt>従業員</dt><dd>28<span class="u">名</span></dd></div>
+        <div><dt>営業エリア</dt><dd>茨城<span class="u">県内全域</span></dd></div>
+      </dl>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">お問い合わせ<span class="arrow">→</span></a>
+        <a class="btn btn-outline" href="#works">施工実績を見る<span class="arrow">→</span></a>
+      </div>
+    </div>
+    <!-- 実写差し替え: 神栖の堤防や河川工事など、地域を象徴する1枚 -->
+    <div class="ph hero-photo" data-label="鹿島灘 / 堤防"></div>
+  </div>
+</section>
+
+<!-- ====== 強み (3) ====== -->
+<section id="strengths">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">01 — 私たちの強み</div>
+        <h2>地元で半世紀、積み上げた三つの土台。</h2>
+      </div>
+      <p class="sec-sub">創業以来、神栖の地で重ねた経験と、職人たちの手仕事。そのすべてが、今日の私たちを形づくっています。</p>
+    </div>
+    <div class="strengths">
+      <article class="strength reveal">
+        <div class="ico">地</div>
+        <div class="num">STRENGTH 01</div>
+        <h3>地域密着、五十二年の信頼</h3>
+        <p>創業から一貫して神栖を拠点に、自治体・地元企業・住民のみなさまと共に歩んできました。地元のことは、地元の私たちが一番よくわかっています。</p>
+      </article>
+      <article class="strength reveal">
+        <div class="ico">技</div>
+        <div class="num">STRENGTH 02</div>
+        <h3>専門資格を持つ、職人の手仕事</h3>
+        <p>1級土木施工管理技士、とび技能士、玉掛けほか、各種有資格者が在籍。難工事や災害復旧にも、自前の人と技で応えます。</p>
+      </article>
+      <article class="strength reveal">
+        <div class="ico">幅</div>
+        <div class="num">STRENGTH 03</div>
+        <h3>5領域を一貫して対応する総合力</h3>
+        <p>土木・とび・石・舗装・水道施設まで、一つの会社で。複合工事や緊急対応も窓口ひとつでスムーズに進められるのが、私たちの強みです。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 事業内容 (5) ====== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">02 — 事業内容</div>
+        <h2>暮らしを支える、五つの仕事。</h2>
+      </div>
+      <p class="sec-sub">河川・道路・水道、そして石の意匠まで。地域インフラのあらゆる場面で、私たちの仕事は生きています。</p>
+    </div>
+    <div class="service-list">
+      <article class="service reveal">
+        <div class="s-num">01</div>
+        <div>
+          <h3>土木工事</h3>
+          <span class="s-en">Civil Engineering</span>
+          <p>河川・治山・下水道・トンネル・橋梁・土地造成など、地域の生活基盤を支える総合土木。災害復旧にも迅速に対応します。</p>
+        </div>
+        <div class="s-tags">
+          <span>河川工事</span><span>治山</span><span>橋梁</span><span>トンネル</span><span>土地造成</span>
+        </div>
+      </article>
+      <article class="service reveal">
+        <div class="s-num">02</div>
+        <div>
+          <h3>とび・土工工事</h3>
+          <span class="s-en">Scaffolding &amp; Earth Works</span>
+          <p>高所作業や基礎工事の専門領域。安全第一を最優先に、ベテランのとび職人が現場を組み立てます。</p>
+        </div>
+        <div class="s-tags">
+          <span>足場組立</span><span>基礎工事</span><span>解体補助</span><span>重機オペレート</span>
+        </div>
+      </article>
+      <article class="service reveal">
+        <div class="s-num">03</div>
+        <div>
+          <h3>石工事</h3>
+          <span class="s-en">Stonework</span>
+          <p>石の表情を読み、空間を組み上げる職人仕事。意匠性の高い外構や、伝統的な石積みまで幅広く対応します。</p>
+        </div>
+        <div class="s-tags">
+          <span>石積み</span><span>石張り</span><span>外構</span><span>意匠仕上</span>
+        </div>
+      </article>
+      <article class="service reveal">
+        <div class="s-num">04</div>
+        <div>
+          <h3>舗装工事</h3>
+          <span class="s-en">Paving</span>
+          <p>アスファルト・コンクリート・ブロック舗装まで。路盤築造から仕上げまで一貫して責任を持って施工します。</p>
+        </div>
+        <div class="s-tags">
+          <span>アスファルト</span><span>コンクリート</span><span>路盤工</span><span>補修</span>
+        </div>
+      </article>
+      <article class="service reveal">
+        <div class="s-num">05</div>
+        <div>
+          <h3>水道施設工事</h3>
+          <span class="s-en">Waterworks</span>
+          <p>上下水道の埋設・施設工事。地域のライフラインを、見えないところで静かに支えるのも、私たちの大切な仕事です。</p>
+        </div>
+        <div class="s-tags">
+          <span>給水管</span><span>排水管</span><span>維持管理</span><span>災害復旧</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 施工実績 ====== -->
+<section id="works">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">03 — 施工実績</div>
+        <h2>現場が、履歴書。</h2>
+      </div>
+      <p class="sec-sub">公共工事から民間案件まで。最近の主な施工例をご紹介します。</p>
+    </div>
+    <div class="works-grid">
+      <article class="work reveal">
+        <!-- 実写差し替え: 利根川下流の堤防工事写真 -->
+        <div class="ph work-ph" data-label="河川 / 2025"></div>
+        <div class="work-meta"><span>河川工事</span><span class="y">2025</span></div>
+        <h3>利根川下流域 堤防強化工事</h3>
+        <p class="work-desc">国土交通省関東地方整備局／L=1.2km 堤防嵩上げ・法面補強</p>
+      </article>
+      <article class="work reveal">
+        <!-- 実写差し替え: 神栖市道の舗装工事 -->
+        <div class="ph work-ph" data-label="舗装 / 2024"></div>
+        <div class="work-meta"><span>舗装工事</span><span class="y">2024</span></div>
+        <h3>神栖市道 舗装打ち替え工事</h3>
+        <p class="work-desc">神栖市発注／L=840m アスファルト全層打替</p>
+      </article>
+      <article class="work reveal">
+        <!-- 実写差し替え: 鹿島灘沿岸の治山工事 -->
+        <div class="ph work-ph" data-label="治山 / 2024"></div>
+        <div class="work-meta"><span>治山工事</span><span class="y">2024</span></div>
+        <h3>鹿島灘沿岸 治山工事</h3>
+        <p class="work-desc">茨城県発注／山腹工・渓流工 A=1.8ha</p>
+      </article>
+      <article class="work reveal">
+        <!-- 実写差し替え: 市営施設の石張り工事 -->
+        <div class="ph work-ph" data-label="石工事 / 2023"></div>
+        <div class="work-meta"><span>石工事</span><span class="y">2023</span></div>
+        <h3>市営施設 外構・石張り工事</h3>
+        <p class="work-desc">神栖市発注／花崗岩 450㎡ 壁面・床仕上げ</p>
+      </article>
+      <article class="work reveal">
+        <!-- 実写差し替え: 下水道推進工法の現場 -->
+        <div class="ph work-ph" data-label="下水道 / 2023"></div>
+        <div class="work-meta"><span>下水道</span><span class="y">2023</span></div>
+        <h3>下水道本管 推進工法施工</h3>
+        <p class="work-desc">神栖市発注／φ800 L=320m 推進工法</p>
+      </article>
+      <article class="work reveal">
+        <!-- 実写差し替え: 臨港道路の擁壁改修 -->
+        <div class="ph work-ph" data-label="土木 / 2022"></div>
+        <div class="work-meta"><span>土木工事</span><span class="y">2022</span></div>
+        <h3>臨港道路 擁壁改修工事</h3>
+        <p class="work-desc">茨城県発注／擁壁 H=4.2m L=180m 改修</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 採用情報 ====== -->
+<section class="recruit" id="recruit">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">04 — 採用情報</div>
+        <h2>地元で、一生の仕事を。</h2>
+      </div>
+      <p class="sec-sub">経験者・Uターン歓迎。技術と地域を、次の世代へ繋ぎたい方を探しています。</p>
+    </div>
+    <div class="recruit-grid">
+      <div class="recruit-msg reveal">
+        <p>派手な仕事ではありません。でも、自分が施工した道や堤防を、家族が毎日通る。近所の人から「ここ直したの、おたく?」と声をかけられる。そんな、ちゃんと顔が見える距離で働ける場所です。</p>
+        <p class="sub">未経験から技能職を目指すUターン希望者も、資格を活かしたい施工管理経験者も、まずは一度、現場を見にきてください。あなたの「これから」を、一緒に考えます。</p>
+      </div>
+      <div class="jobs reveal">
+        <a class="job" href="#contact">
+          <span class="job-tag">中途 / 経験者</span>
+          <h4>施工管理（土木）</h4>
+          <p>1級・2級土木施工管理技士／公共工事の現場経験者歓迎。資格手当・住宅手当あり。</p>
+        </a>
+        <a class="job" href="#contact">
+          <span class="job-tag">中途 / 経験者</span>
+          <h4>技能職（とび・土工・石工）</h4>
+          <p>業界経験3年以上を歓迎。資格取得支援制度あり。年齢不問でご相談ください。</p>
+        </a>
+        <a class="job" href="#contact">
+          <span class="job-tag">中途 / Uターン</span>
+          <h4>未経験スタート（地元出身者優遇）</h4>
+          <p>神栖・鹿嶋・千葉北東部出身の方を歓迎。先輩OJTで一から育てます。</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 会社概要 ====== -->
+<section id="profile">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-num">05 — 会社概要</div>
+        <h2>竹中建設について。</h2>
+      </div>
+      <p class="sec-sub">神栖の地で、ひとつひとつ積み重ねてきた歴史と、私たちの基本情報です。</p>
+    </div>
+    <div class="profile-grid">
+      <!-- 実写差し替え: 本社事務所外観 -->
+      <div class="ph profile-ph reveal" data-label="本社 / 神栖市土合中央"></div>
+      <table class="profile-table reveal">
+        <tbody>
+          <tr><th>会社名</th><td>竹中建設株式会社</td></tr>
+          <tr><th>代表者</th><td>代表取締役 竹中 之博</td></tr>
+          <tr><th>創業</th><td>1974年（昭和49年）</td></tr>
+          <tr><th>所在地</th><td>〒314-0347<br />茨城県神栖市土合中央3-7-4</td></tr>
+          <tr><th>電話</th><td>0479-48-2265</td></tr>
+          <tr><th>資本金</th><td>1,000万円</td></tr>
+          <tr><th>従業員</th><td>28名（仮）</td></tr>
+          <tr><th>許可番号</th><td>茨城県知事許可 第023968号</td></tr>
+          <tr><th>業務内容</th><td>土木工事／とび・土工工事／石工事／舗装工事／水道施設工事</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta" id="contact">
+  <div class="container cta-grid">
+    <div class="reveal">
+      <h2>工事のご相談、採用のお問い合わせはお気軽に。</h2>
+      <p>見積依頼・現場相談・採用についてのご質問など、お電話またはフォームより承ります。</p>
+    </div>
+    <div class="cta-actions reveal">
+      <a class="btn" href="mailto:info@example.jp">お問い合わせフォーム<span class="arrow">→</span></a>
+      <a class="btn btn-outline" href="tel:0479482265">お電話で 0479-48-2265<span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== フッター ====== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>竹中建設株式会社</h4>
+        <p>〒314-0347 茨城県神栖市土合中央3-7-4<br />TEL 0479-48-2265<br />茨城県知事許可 第023968号</p>
+      </div>
+      <div>
+        <h4>サイトメニュー</h4>
+        <ul>
+          <li><a href="#strengths">私たちの強み</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#works">施工実績</a></li>
+          <li><a href="#recruit">採用情報</a></li>
+          <li><a href="#profile">会社概要</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>SNS</h4>
+        <a class="ig-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          Instagramで現場の様子を公開中
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Takenaka Kensetsu Co., Ltd.</span>
+      <span>Designed for trust, since 1974.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // スクロール演出: 画面に入ったら .in を付与
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // モバイル: ナビ内リンクを押したら閉じる
+  document.querySelectorAll('#nav a').forEach((a) => {
+    a.addEventListener('click', () => document.getElementById('nav').classList.remove('open'));
+  });
+</script>
+
+<!--
+====================================================
+実装メモ / 要差し替え一覧
+====================================================
+- ロゴ: 現状テキストロゴ。名刺のものをトレースして差し替え予定
+- ヒーロー写真: 鹿島灘・利根川・施工中の景色など、地域感のある1枚
+- 強み3つの数字: 創業52年は確定、5分野・28名は要確認
+- 施工実績6件: タイトル・発注者・年・規模は仮データ。要事実確認
+- 採用本文: 仮文。代表メッセージ的に書き直す前提
+- 会社概要: 創業年は1974年で確定だが、創業年月日・資本金の正式表記要確認
+- お問い合わせフォーム: 現状はメール直リンク。formspree等で実装予定
+- Instagram: アカウントURLが決まり次第差し替え
+====================================================
+-->
+<script src="photos-apply.js"></script>
+</body>
+</html>

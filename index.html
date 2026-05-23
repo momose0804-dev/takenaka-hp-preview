@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>竹中建設HP デザイン案 比較 — 4案ご提案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f7f4ed;
+    --panel: #ffffff;
+    --ink: #1b1a18;
+    --muted: #6e655a;
+    --line: rgba(27,26,24,0.10);
+    --accent: #b04a26;
+    --green: #355545;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    background: var(--bg); color: var(--ink);
+    line-height: 1.8; font-size: 15px;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 56px 32px 88px; }
+
+  .head {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
+    align-items: end; margin-bottom: 48px;
+    padding-bottom: 28px; border-bottom: 1px solid var(--line);
+  }
+  .head .eyebrow {
+    font-family: 'Noto Sans JP', sans-serif; font-size: 11px;
+    letter-spacing: 0.32em; color: var(--accent); font-weight: 700;
+    margin-bottom: 18px; text-transform: uppercase;
+  }
+  .head h1 {
+    font-family: 'Noto Serif JP', serif; font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px); line-height: 1.4;
+    margin: 0;
+  }
+  .head h1 em { font-style: normal; color: var(--accent); }
+  .head .meta {
+    text-align: right; font-size: 12px; color: var(--muted); line-height: 1.9;
+  }
+  .head .meta strong { color: var(--ink); font-weight: 500; }
+
+  .intro {
+    margin-bottom: 56px;
+    font-size: 14px; color: var(--muted); line-height: 2;
+    max-width: 64em;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 4px; overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    display: flex; flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(27,26,24,0.10);
+    border-color: rgba(27,26,24,0.18);
+  }
+  .card .thumb {
+    width: 100%; aspect-ratio: 16/10; background: #ece8df center/cover no-repeat;
+    border-bottom: 1px solid var(--line);
+    background-image: linear-gradient(135deg, #ece8df 0%, #d9d2c4 100%);
+    position: relative;
+  }
+  .card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .card .body { padding: 28px 32px 32px; flex: 1; display: flex; flex-direction: column; }
+  .card .case-num {
+    font-family: 'Noto Sans JP', sans-serif; font-size: 11px;
+    letter-spacing: 0.3em; color: var(--accent); font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .card h2 {
+    font-family: 'Noto Serif JP', serif; font-weight: 700;
+    font-size: 22px; line-height: 1.45; margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .card .concept { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+  .card .desc { font-size: 13.5px; color: var(--ink); line-height: 1.95; margin-bottom: 24px; flex: 1; }
+  .card .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .card .tags span {
+    font-size: 11px; padding: 3px 10px; border: 1px solid var(--line);
+    border-radius: 999px; color: var(--muted);
+  }
+  .card .open {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 22px; background: var(--ink); color: #fff;
+    font-size: 13px; letter-spacing: 0.06em; font-weight: 500;
+    border-radius: 2px;
+    align-self: flex-start;
+    transition: background .25s, transform .25s;
+  }
+  .card .open:hover { background: var(--accent); }
+  .card .open .arrow { transition: transform .25s; }
+  .card:hover .open .arrow { transform: translateX(4px); }
+
+  /* 案4 カードはダーク基調で差別化 */
+  .card.is-c4 { background: #161c20; color: #f5efe4; border-color: rgba(245,239,228,0.12); }
+  .card.is-c4 h2 { color: #f5efe4; }
+  .card.is-c4 .case-num { color: #e85a2a; }
+  .card.is-c4 .concept, .card.is-c4 .desc { color: #c5beb3; }
+  .card.is-c4 .tags span { color: #c5beb3; border-color: rgba(245,239,228,0.18); }
+  .card.is-c4 .open { background: #e85a2a; color: #f5efe4; }
+  .card.is-c4 .open:hover { background: #ff6f3c; }
+
+  footer {
+    margin-top: 80px; padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--muted); line-height: 1.9;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  footer .right { text-align: right; }
+
+  @media (max-width: 880px) {
+    .head { grid-template-columns: 1fr; gap: 16px; }
+    .head .meta { text-align: left; }
+    .grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="head">
+    <div>
+      <div class="eyebrow">DESIGN PROPOSAL · TAKENAKA KENSETSU</div>
+      <h1>竹中建設HP<br /><em>4案デザイン</em>ご提案</h1>
+    </div>
+    <div class="meta">
+      <div>2026.05.23</div>
+      <div><strong>竹中建設株式会社 様</strong></div>
+      <div>茨城県神栖市 / 総合土木建設業</div>
+    </div>
+  </div>
+
+  <p class="intro">
+    本ページは、竹中建設株式会社様のホームページデザインに関する4案のご提案です。各案ともコンセプト・配色・写真・レイアウトを変えて制作しています。下記の各案カードから、原寸大のプレビューをご確認ください。なお、写真素材はストック素材で仮配置しています（実装時に貴社の実写と差し替え可能です）。
+  </p>
+
+  <div class="grid">
+
+    <!-- 案1 -->
+    <a class="card" href="case1-local.html" target="_blank" rel="noopener">
+      <div class="thumb"><img src="assets/thumbs/case1.png" alt="案1 サムネ" /></div>
+      <div class="body">
+        <div class="case-num">CASE 01</div>
+        <h2>地域実直 ─ 温かみ × 地域 × 実直</h2>
+        <div class="concept">クリーム × 緑 × ラスト ／ Noto Serif JP</div>
+        <p class="desc">「地に足をつけて、五十二年。」地元密着の実直さを、温かみのある配色と手書き感のある書体で伝えるトーン。地方自治体・地元元請・地域住民との関係性を大切にする企業像。</p>
+        <div class="tags"><span>地域密着</span><span>暖色</span><span>セリフ書体</span></div>
+        <span class="open">案1を見る<span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 案2 -->
+    <a class="card" href="case2-modern.html" target="_blank" rel="noopener">
+      <div class="thumb"><img src="assets/thumbs/case2.png" alt="案2 サムネ" /></div>
+      <div class="body">
+        <div class="case-num">CASE 02</div>
+        <h2>清潔モダン ─ 白基調 × 直線 × 大型</h2>
+        <div class="concept">白 × 深緑 × テラコッタ ／ Zen Kaku Gothic New</div>
+        <p class="desc">「確かな技術で、地域に応える。」シャープな直線とゆったりした余白で、技術力と信頼性を現代的に表現。民間元請・自治体・若手中途求職者への訴求に強いトーン。</p>
+        <div class="tags"><span>モダン</span><span>白基調</span><span>直線美</span></div>
+        <span class="open">案2を見る<span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 案3 -->
+    <a class="card" href="case3-editorial.html" target="_blank" rel="noopener">
+      <div class="thumb"><img src="assets/thumbs/case3.png" alt="案3 サムネ" /></div>
+      <div class="body">
+        <div class="case-num">CASE 03</div>
+        <h2>編集デザイン ─ 物語性 × 墨×象牙</h2>
+        <div class="concept">象牙 × 墨 × マスタード ／ Shippori Mincho</div>
+        <p class="desc">「地域インフラの、確かな裏方。」雑誌・ドキュメンタリーのような編集レイアウトで、企業の物語と人柄を伝えるトーン。文章を読ませる構成、ドロップキャップ、章扉、引用が特徴。</p>
+        <div class="tags"><span>編集調</span><span>物語性</span><span>明朝</span></div>
+        <span class="open">案3を見る<span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- 案4 -->
+    <a class="card is-c4" href="case4-cinematic.html" target="_blank" rel="noopener">
+      <div class="thumb"><img src="assets/thumbs/case4.png" alt="案4 サムネ" /></div>
+      <div class="body">
+        <div class="case-num">CASE 04 · NEW</div>
+        <h2>シネマティック ─ フルスクリーン × モーション</h2>
+        <div class="concept">墨黒 × 橙赤 × Inter ／ GSAP モーション</div>
+        <p class="desc">「地域の土台を、確かな手で。」100vh のフルブリード写真、文字スプリット、Ken Burns、スクロール連動カードなど、リッチなモーションで「技術力の幅」を見せるデモ的な4案目。動きで魅せる体験重視型。</p>
+        <div class="tags"><span>フルスクリーン</span><span>モーション</span><span>ダーク</span></div>
+        <span class="open">案4を見る<span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div>
+      竹中建設株式会社 様向けデザイン提案<br />
+      〒314-0347 茨城県神栖市土合中央3-7-4 / TEL 0479-48-2265
+    </div>
+    <div class="right">
+      Design Proposal v1.0 · 2026.05.23<br />
+      4 case study · single-URL preview
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
