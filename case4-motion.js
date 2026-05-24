@@ -99,9 +99,9 @@
     const meta = document.querySelector('.c4-hero__meta-tr');
 
     // 背景写真を設定（c4-hero__photo は .ph ではないので直接指定）
+    // ユーザー指定：夕景の油圧ショベル（Komatsu）— ローカル画像を使用
     if (photo) {
-      photo.style.backgroundImage =
-        'url("https://images.unsplash.com/photo-1609359923548-cd7fe10364eb?w=2000&q=85&auto=format&fit=crop&crop=entropy")';
+      photo.style.backgroundImage = 'url("assets/case4-hero.jpg")';
       photo.style.backgroundSize = 'cover';
       photo.style.backgroundPosition = 'center';
     }
