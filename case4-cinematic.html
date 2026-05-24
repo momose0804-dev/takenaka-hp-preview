@@ -656,6 +656,24 @@
   /* リンク/ボタンにカーソルホバー対応 */
   a, button, .btn { cursor: none; }
 
+  /* 案4 専用：レスポンシブ調整 */
+  @media (max-width: 768px) {
+    .c4-hero { min-height: 540px; }
+    .c4-hero__inner { padding: 0 24px; }
+    .c4-hero h1 { font-size: clamp(28px, 8vw, 40px); margin-bottom: 20px; }
+    .c4-hero__lead { font-size: 14px; line-height: 1.9; margin-bottom: 28px; }
+    .c4-hero__actions { gap: 10px; }
+    .c4-hero__actions .btn { padding: 14px 22px; font-size: 12px; }
+    .c4-hero__meta-tr { top: 76px; right: 24px; font-size: 9px; letter-spacing: 0.18em; }
+    .c4-hero__eyebrow { font-size: 10px; margin-bottom: 16px; }
+    .c4-hero__eyebrow::before { width: 24px; }
+    .c4-hero__scroll { bottom: 20px; font-size: 9px; }
+  }
+  @media (max-width: 420px) {
+    .c4-hero h1 { font-size: clamp(24px, 7vw, 34px); }
+    .c4-hero__meta-tr { display: none; }
+  }
+
   /* 動きを抑制したいユーザー */
   @media (prefers-reduced-motion: reduce) {
     [data-anim] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
