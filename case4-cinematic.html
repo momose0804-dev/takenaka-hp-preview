@@ -482,11 +482,18 @@
     --c4-rule: rgba(245,239,228,0.10);
     --c4-rule-2: rgba(245,239,228,0.22);
   }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--c4-bg);
     color: var(--c4-ivory);
     cursor: none;
   }
+  /* 万一 JS が落ちて gsap.from で opacity:0 のまま残った要素を最終的に救う安全網 */
+  .c4-safety-show .sec-head > *,
+  .c4-safety-show .strength,
+  .c4-safety-show .service,
+  .c4-safety-show .work,
+  .c4-safety-show .job { opacity: 1 !important; transform: none !important; }
   a { color: inherit; }
 
   /* カスタムカーソル */

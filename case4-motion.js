@@ -26,16 +26,10 @@
   }
   if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-  // ===== Lenis 慣性スクロール =====
-  let lenis = null;
-  if (!reduce && typeof Lenis !== 'undefined') {
-    lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-    }
-  }
+  // ===== スムーズスクロール =====
+  // 以前 Lenis を使ったが ScrollTrigger と干渉してカードが opacity:0 のまま残る不具合があったため、
+  // ネイティブ CSS `scroll-behavior: smooth`（HTML側で指定）に統一。
+  // Lenis は読み込まれていても初期化しない。
 
   // ===== ページロードカーテン =====
   function dismissCurtain() {
@@ -162,49 +156,54 @@
     update();
   }
 
-  // ===== セクション見出しワイプ＆本文フェードアップ =====
-  function setupSectionReveals() {
-    if (typeof ScrollTrigger === 'undefined' || reduce) return;
-    document.querySelectorAll('.sec-head').forEach((head) => {
-      const h2 = head.querySelector('h2');
-      const p = head.querySelector('p');
-      const num = head.querySelector('.sec-num');
-      const items = [num, h2, p].filter(Boolean);
-      items.forEach((el, i) => {
-        ScrollTrigger.create({
-          trigger: head,
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.from(el, { opacity: 0, y: 30, duration: 0.8, delay: i * 0.12, ease: 'power3.out' });
-          },
-        });
+  // ===== 共通：IntersectionObserver で要素を viewport 突入時に発火 =====
+  // ScrollTrigger より単純で、Lenis や RAF 状態に依存しないので確実。
+  function onceVisible(elements, callback, opts) {
+    if (!('IntersectionObserver' in window)) {
+      // 旧ブラウザは即発火
+      elements.forEach((el) => callback(el));
+      return;
+    }
+    const seen = new WeakSet();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !seen.has(e.target)) {
+          seen.add(e.target);
+          callback(e.target);
+          io.unobserve(e.target);
+        }
       });
+    }, { rootMargin: opts && opts.rootMargin || '0px 0px -15% 0px', threshold: 0.05 });
+    elements.forEach((el) => io.observe(el));
+  }
+
+  // ===== セクション見出しフェードアップ =====
+  function setupSectionReveals() {
+    if (reduce) return;
+    onceVisible(document.querySelectorAll('.sec-head'), (head) => {
+      const items = [head.querySelector('.sec-num'), head.querySelector('h2'), head.querySelector('p')].filter(Boolean);
+      gsap.from(items, { opacity: 0, y: 30, duration: 0.8, stagger: 0.12, ease: 'power3.out' });
     });
   }
 
   // ===== 強み 3 カード スタガー =====
   function setupStrengthCards() {
-    if (typeof ScrollTrigger === 'undefined' || reduce) return;
+    if (reduce) return;
     document.querySelectorAll('.strengths').forEach((wrap) => {
       const cards = wrap.querySelectorAll('.strength');
-      ScrollTrigger.create({
-        trigger: wrap,
-        start: 'top 75%',
-        once: true,
-        onEnter: () => {
-          gsap.from(cards, {
-            opacity: 0, y: 60, rotationY: -12, transformPerspective: 800,
-            duration: 0.9, stagger: 0.15, ease: 'power3.out',
-          });
-        },
+      if (!cards.length) return;
+      onceVisible([wrap], () => {
+        gsap.from(cards, {
+          opacity: 0, y: 60, rotationY: -12, transformPerspective: 800,
+          duration: 0.9, stagger: 0.15, ease: 'power3.out',
+        });
       });
     });
   }
 
   // ===== 数字カウントアップ =====
   function setupCountUp() {
-    if (typeof ScrollTrigger === 'undefined' || reduce) return;
+    if (reduce) return;
     document.querySelectorAll('.stat .v').forEach((node) => {
       const m = node.textContent.match(/(\d+)/);
       if (!m) return;
@@ -217,24 +216,19 @@
       node.innerHTML = '';
       node.appendChild(numEl);
       if (unitHtml) node.insertAdjacentHTML('beforeend', unitHtml);
-      ScrollTrigger.create({
-        trigger: node,
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          numEl.textContent = '0';
-          gsap.to({ v: 0 }, {
-            v: finalVal, duration: 1.6, ease: 'power2.out',
-            onUpdate: function () { numEl.textContent = Math.round(this.targets()[0].v); },
-          });
-        },
+      onceVisible([node], () => {
+        numEl.textContent = '0';
+        gsap.to({ v: 0 }, {
+          v: finalVal, duration: 1.6, ease: 'power2.out',
+          onUpdate: function () { numEl.textContent = Math.round(this.targets()[0].v); },
+        });
       });
     });
   }
 
   // ===== サービス / 実績 / 採用 カードのスタガー入場 =====
   function setupGridReveals() {
-    if (typeof ScrollTrigger === 'undefined' || reduce) return;
+    if (reduce) return;
     const groups = [
       { selector: '.services-grid .service', stagger: 0.08 },
       { selector: '.services-grid-2 .service', stagger: 0.08 },
@@ -244,13 +238,9 @@
     groups.forEach((g) => {
       const items = document.querySelectorAll(g.selector);
       if (!items.length) return;
-      ScrollTrigger.create({
-        trigger: items[0].parentElement,
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          gsap.from(items, { opacity: 0, y: 40, duration: 0.7, stagger: g.stagger, ease: 'power3.out' });
-        },
+      const parent = items[0].parentElement;
+      onceVisible([parent], () => {
+        gsap.from(items, { opacity: 0, y: 40, duration: 0.7, stagger: g.stagger, ease: 'power3.out' });
       });
     });
   }
@@ -306,11 +296,12 @@
     setupProgress();
     setupCursor();
     setupCtaBreath();
-    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
   }
 
   function bootstrap() {
     dismissCurtain().then(init).catch((e) => { console.error('[case4-motion]', e); init(); });
+    // 安全網：何が起きても 8 秒後にはすべての要素を強制的に表示
+    setTimeout(() => { document.body.classList.add('c4-safety-show'); }, 8000);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootstrap);
