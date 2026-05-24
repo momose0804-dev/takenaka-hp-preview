@@ -109,9 +109,23 @@
     font-style: normal; color: var(--rust);
     border-bottom: 3px solid var(--rust); padding-bottom: 2px;
   }
+  .hero-sub {
+    font-family: 'Noto Serif JP', serif; font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 32px);
+    line-height: 1.7; color: var(--green);
+    margin: 0 0 20px;
+    letter-spacing: 0.04em;
+  }
   .hero-lead {
     font-size: 16px; line-height: 2.1; color: var(--ink);
     max-width: 460px;
+  }
+  .hero-meta dd.tiny {
+    font-size: 14px; line-height: 1.4;
+  }
+  .work-desc .ep {
+    display: inline-block; margin-top: 6px;
+    color: var(--muted); font-size: 12.5px; font-style: italic;
   }
   .hero-meta {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 32px;
@@ -419,16 +433,21 @@
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
-      <div class="hero-eyebrow">茨城・神栖 / 総合土木建設</div>
-      <h1>地に足をつけて、<em>五十二年</em>。</h1>
+      <div class="hero-eyebrow">茨城・神栖 ／ 総合土木建設 ／ EST. 一九七四</div>
+      <h1>神栖で、<em>五十二年</em>。</h1>
+      <p class="hero-sub">
+        ちゃんと、つくる。<br />
+        ちゃんと、まもる。<br />
+        ちゃんと、のこす。
+      </p>
       <p class="hero-lead">
-        利根川の河口、鹿島の海。この土地で、川と道と暮らしの基礎を、地元の手で支えてきました。派手な仕事ではないけれど、毎朝の「当たり前」を、ちゃんと残す。それが、私たち竹中建設の仕事です。
+        利根川の河口、鹿島の海。川と道と水の基礎を、地元の手で積み重ねてきました。派手な仕事ではありません。ただ、ちゃんと残す。それが、私たち竹中建設の仕事です。
       </p>
       <dl class="hero-meta">
-        <div><dt>創業</dt><dd>1974<span class="u">年</span></dd></div>
-        <div><dt>事業領域</dt><dd>5<span class="u">分野</span></dd></div>
-        <div><dt>従業員</dt><dd>28<span class="u">名</span></dd></div>
+        <div><dt>創業</dt><dd>1974<span class="u">／since</span></dd></div>
+        <div><dt>領域</dt><dd>5<span class="u">領域 一窓口で</span></dd></div>
         <div><dt>営業エリア</dt><dd>茨城<span class="u">県内全域</span></dd></div>
+        <div><dt>許可</dt><dd class="tiny">茨城県知事許可<span class="u"> 第023968号</span></dd></div>
       </dl>
       <div class="hero-actions">
         <a class="btn" href="#contact">お問い合わせ<span class="arrow">→</span></a>
@@ -446,28 +465,28 @@
     <div class="sec-head reveal">
       <div>
         <div class="sec-num">01 — 私たちの強み</div>
-        <h2>地元で半世紀、積み上げた三つの土台。</h2>
+        <h2>ちゃんとやる、ということ。</h2>
       </div>
-      <p class="sec-sub">創業以来、神栖の地で重ねた経験と、職人たちの手仕事。そのすべてが、今日の私たちを形づくっています。</p>
+      <p class="sec-sub">派手な仕事ではない。新しい技術でもない。ただ、川を守り、道を均し、水を通す。五十二年、神栖で続けてきたのは、それだけです。</p>
     </div>
     <div class="strengths">
       <article class="strength reveal">
         <div class="ico">地</div>
         <div class="num">STRENGTH 01</div>
-        <h3>地域密着、五十二年の信頼</h3>
-        <p>創業から一貫して神栖を拠点に、自治体・地元企業・住民のみなさまと共に歩んできました。地元のことは、地元の私たちが一番よくわかっています。</p>
+        <h3>ちゃんと、地元で。</h3>
+        <p>創業から一度も場所を変えず、神栖に居続けました。地形も、気候も、住んでいる人の顔も、五十二年かけて、自分たちの足で覚えてきた土地です。</p>
       </article>
       <article class="strength reveal">
-        <div class="ico">技</div>
+        <div class="ico">手</div>
         <div class="num">STRENGTH 02</div>
-        <h3>専門資格を持つ、職人の手仕事</h3>
-        <p>1級土木施工管理技士、とび技能士、玉掛けほか、各種有資格者が在籍。難工事や災害復旧にも、自前の人と技で応えます。</p>
+        <h3>ちゃんと、手で。</h3>
+        <p>1級土木施工管理技士・とび技能士・玉掛けほか、有資格者が自前で現場を組み立てます。借り物の人手では、ちゃんとしたものは残せない。そう、思っています。</p>
       </article>
       <article class="strength reveal">
-        <div class="ico">幅</div>
+        <div class="ico">窓</div>
         <div class="num">STRENGTH 03</div>
-        <h3>5領域を一貫して対応する総合力</h3>
-        <p>土木・とび・石・舗装・水道施設まで、一つの会社で。複合工事や緊急対応も窓口ひとつでスムーズに進められるのが、私たちの強みです。</p>
+        <h3>ちゃんと、ひとつの窓口で。</h3>
+        <p>土木・とび・石・舗装・水道──5領域を、ひとつの会社で。発注者にとっての安心は、調整の少なさ。複合工事も緊急対応も、窓口は一つだけ。</p>
       </article>
     </div>
   </div>
@@ -479,17 +498,17 @@
     <div class="sec-head reveal">
       <div>
         <div class="sec-num">02 — 事業内容</div>
-        <h2>暮らしを支える、五つの仕事。</h2>
+        <h2>五つの仕事、ひとつの会社で。</h2>
       </div>
-      <p class="sec-sub">河川・道路・水道、そして石の意匠まで。地域インフラのあらゆる場面で、私たちの仕事は生きています。</p>
+      <p class="sec-sub">土木・とび・石・舗装・水道。神栖から茨城県内全域へ、地域インフラのあらゆる場面に、私たちの仕事は息づいています。</p>
     </div>
     <div class="service-list">
       <article class="service reveal">
         <div class="s-num">01</div>
         <div>
-          <h3>土木工事</h3>
+          <h3>土木工事 ─ ちゃんと、暮らしの土台を。</h3>
           <span class="s-en">Civil Engineering</span>
-          <p>河川・治山・下水道・トンネル・橋梁・土地造成など、地域の生活基盤を支える総合土木。災害復旧にも迅速に対応します。</p>
+          <p>河川・治山・下水道・トンネル・橋梁・土地造成。地域の生活基盤を支える総合土木です。災害復旧にも、自前の人と機材で迅速に動きます。</p>
         </div>
         <div class="s-tags">
           <span>河川工事</span><span>治山</span><span>橋梁</span><span>トンネル</span><span>土地造成</span>
@@ -498,9 +517,9 @@
       <article class="service reveal">
         <div class="s-num">02</div>
         <div>
-          <h3>とび・土工工事</h3>
+          <h3>とび・土工工事 ─ 現場の足元から。</h3>
           <span class="s-en">Scaffolding &amp; Earth Works</span>
-          <p>高所作業や基礎工事の専門領域。安全第一を最優先に、ベテランのとび職人が現場を組み立てます。</p>
+          <p>高所作業や基礎工事は、現場の骨格をつくる仕事です。安全第一を最優先に、ベテランのとび職人が組み立てます。</p>
         </div>
         <div class="s-tags">
           <span>足場組立</span><span>基礎工事</span><span>解体補助</span><span>重機オペレート</span>
@@ -509,9 +528,9 @@
       <article class="service reveal">
         <div class="s-num">03</div>
         <div>
-          <h3>石工事</h3>
+          <h3>石工事 ─ ちゃんと、石を読む。</h3>
           <span class="s-en">Stonework</span>
-          <p>石の表情を読み、空間を組み上げる職人仕事。意匠性の高い外構や、伝統的な石積みまで幅広く対応します。</p>
+          <p>石は、一つひとつ表情が違います。読み取って、空間を組み上げる職人仕事。意匠性の高い外構から、伝統的な石積みまで。</p>
         </div>
         <div class="s-tags">
           <span>石積み</span><span>石張り</span><span>外構</span><span>意匠仕上</span>
@@ -520,9 +539,9 @@
       <article class="service reveal">
         <div class="s-num">04</div>
         <div>
-          <h3>舗装工事</h3>
+          <h3>舗装工事 ─ 毎日の道を。</h3>
           <span class="s-en">Paving</span>
-          <p>アスファルト・コンクリート・ブロック舗装まで。路盤築造から仕上げまで一貫して責任を持って施工します。</p>
+          <p>アスファルト・コンクリート・ブロック舗装まで。路盤築造から仕上げまで、一貫責任で施工します。毎朝、誰かが通る道です。手は抜けません。</p>
         </div>
         <div class="s-tags">
           <span>アスファルト</span><span>コンクリート</span><span>路盤工</span><span>補修</span>
@@ -531,9 +550,9 @@
       <article class="service reveal">
         <div class="s-num">05</div>
         <div>
-          <h3>水道施設工事</h3>
+          <h3>水道施設工事 ─ ちゃんと、見えないところで。</h3>
           <span class="s-en">Waterworks</span>
-          <p>上下水道の埋設・施設工事。地域のライフラインを、見えないところで静かに支えるのも、私たちの大切な仕事です。</p>
+          <p>上下水道の埋設・施設工事。地域のライフラインを、見えないところで静かに支える。仕上がりが目立たないほど、いい仕事です。</p>
         </div>
         <div class="s-tags">
           <span>給水管</span><span>排水管</span><span>維持管理</span><span>災害復旧</span>
@@ -551,7 +570,7 @@
         <div class="sec-num">03 — 施工実績</div>
         <h2>現場が、履歴書。</h2>
       </div>
-      <p class="sec-sub">公共工事から民間案件まで。最近の主な施工例をご紹介します。</p>
+      <p class="sec-sub">近年お引き受けした主な現場の一部です。公共工事から民間案件まで、ちゃんと残ったものを、並べました。</p>
     </div>
     <div class="works-grid">
       <article class="work reveal">
@@ -559,42 +578,42 @@
         <div class="ph work-ph" data-label="河川 / 2025"></div>
         <div class="work-meta"><span>河川工事</span><span class="y">2025</span></div>
         <h3>利根川下流域 堤防強化工事</h3>
-        <p class="work-desc">国土交通省関東地方整備局／L=1.2km 堤防嵩上げ・法面補強</p>
+        <p class="work-desc">国土交通省 関東地方整備局／L=1.2km 堤防嵩上げ・法面補強<br /><span class="ep">└ 出水期前の重点工事として、通常より圧縮した工程で完工。</span></p>
       </article>
       <article class="work reveal">
         <!-- 実写差し替え: 神栖市道の舗装工事 -->
         <div class="ph work-ph" data-label="舗装 / 2024"></div>
         <div class="work-meta"><span>舗装工事</span><span class="y">2024</span></div>
         <h3>神栖市道 舗装打ち替え工事</h3>
-        <p class="work-desc">神栖市発注／L=840m アスファルト全層打替</p>
+        <p class="work-desc">神栖市発注／L=840m アスファルト全層打替<br /><span class="ep">└ 沿線住民への影響を抑えるため、工区分けと夜間施工を組み合わせて対応。</span></p>
       </article>
       <article class="work reveal">
         <!-- 実写差し替え: 鹿島灘沿岸の治山工事 -->
         <div class="ph work-ph" data-label="治山 / 2024"></div>
         <div class="work-meta"><span>治山工事</span><span class="y">2024</span></div>
         <h3>鹿島灘沿岸 治山工事</h3>
-        <p class="work-desc">茨城県発注／山腹工・渓流工 A=1.8ha</p>
+        <p class="work-desc">茨城県発注／山腹工・渓流工 A=1.8ha<br /><span class="ep">└ 沿岸防災インフラ整備の一環として、地形に即した工法を選定。</span></p>
       </article>
       <article class="work reveal">
         <!-- 実写差し替え: 市営施設の石張り工事 -->
         <div class="ph work-ph" data-label="石工事 / 2023"></div>
         <div class="work-meta"><span>石工事</span><span class="y">2023</span></div>
         <h3>市営施設 外構・石張り工事</h3>
-        <p class="work-desc">神栖市発注／花崗岩 450㎡ 壁面・床仕上げ</p>
+        <p class="work-desc">神栖市発注／花崗岩 450㎡ 壁面・床仕上げ<br /><span class="ep">└ 意匠性と耐久性を両立する仕様を、設計者と協議のうえ実現。</span></p>
       </article>
       <article class="work reveal">
         <!-- 実写差し替え: 下水道推進工法の現場 -->
         <div class="ph work-ph" data-label="下水道 / 2023"></div>
         <div class="work-meta"><span>下水道</span><span class="y">2023</span></div>
         <h3>下水道本管 推進工法施工</h3>
-        <p class="work-desc">神栖市発注／φ800 L=320m 推進工法</p>
+        <p class="work-desc">神栖市発注／φ800 L=320m 推進工法<br /><span class="ep">└ 地下埋設物が多い区間で、開削工法を避けて推進工法を採用。</span></p>
       </article>
       <article class="work reveal">
         <!-- 実写差し替え: 臨港道路の擁壁改修 -->
         <div class="ph work-ph" data-label="土木 / 2022"></div>
         <div class="work-meta"><span>土木工事</span><span class="y">2022</span></div>
         <h3>臨港道路 擁壁改修工事</h3>
-        <p class="work-desc">茨城県発注／擁壁 H=4.2m L=180m 改修</p>
+        <p class="work-desc">茨城県発注／擁壁 H=4.2m L=180m 改修<br /><span class="ep">└ 劣化したコンクリート擁壁を、交通規制を最小限に抑えて改修。</span></p>
       </article>
     </div>
   </div>
@@ -606,30 +625,31 @@
     <div class="sec-head reveal">
       <div>
         <div class="sec-num">04 — 採用情報</div>
-        <h2>地元で、一生の仕事を。</h2>
+        <h2>ちゃんとやる人を、待っています。</h2>
       </div>
-      <p class="sec-sub">経験者・Uターン歓迎。技術と地域を、次の世代へ繋ぎたい方を探しています。</p>
+      <p class="sec-sub">資格でも経歴でもなく、それが一番の条件です。</p>
     </div>
     <div class="recruit-grid">
       <div class="recruit-msg reveal">
-        <p>派手な仕事ではありません。でも、自分が施工した道や堤防を、家族が毎日通る。近所の人から「ここ直したの、おたく?」と声をかけられる。そんな、ちゃんと顔が見える距離で働ける場所です。</p>
-        <p class="sub">未経験から技能職を目指すUターン希望者も、資格を活かしたい施工管理経験者も、まずは一度、現場を見にきてください。あなたの「これから」を、一緒に考えます。</p>
+        <p>道路を一本ひいたら、家族がそこを通る。堤防を一段あげたら、近所の家が、水から守られる。</p>
+        <p>派手な手柄話ではない。けれど、自分の仕事が、誰の暮らしに届いているか、毎日見える距離で働けるのが、地方土木の仕事です。</p>
+        <p class="sub">「ちゃんと」を分かち合える人を、探しています。</p>
       </div>
       <div class="jobs reveal">
         <a class="job" href="#contact">
           <span class="job-tag">中途 / 経験者</span>
           <h4>施工管理（土木）</h4>
-          <p>1級・2級土木施工管理技士／公共工事の現場経験者歓迎。資格手当・住宅手当あり。</p>
+          <p>1級・2級土木施工管理技士をお持ちの方、公共工事の現場経験者を歓迎します。資格手当／住宅手当あり。</p>
         </a>
         <a class="job" href="#contact">
           <span class="job-tag">中途 / 経験者</span>
           <h4>技能職（とび・土工・石工）</h4>
-          <p>業界経験3年以上を歓迎。資格取得支援制度あり。年齢不問でご相談ください。</p>
+          <p>業界経験 3 年以上を歓迎。資格取得支援制度あり。年齢不問。まずは現場を見に来てください。</p>
         </a>
         <a class="job" href="#contact">
           <span class="job-tag">中途 / Uターン</span>
-          <h4>未経験スタート（地元出身者優遇）</h4>
-          <p>神栖・鹿嶋・千葉北東部出身の方を歓迎。先輩OJTで一から育てます。</p>
+          <h4>未経験スタート／Uターン優遇</h4>
+          <p>神栖・鹿嶋・千葉北東部出身の方を歓迎します。先輩の OJT で、一から覚えていけます。やる気を、いちばん大事にしています。</p>
         </a>
       </div>
     </div>
@@ -670,12 +690,12 @@
 <section class="cta" id="contact">
   <div class="container cta-grid">
     <div class="reveal">
-      <h2>工事のご相談、採用のお問い合わせはお気軽に。</h2>
-      <p>見積依頼・現場相談・採用についてのご質問など、お電話またはフォームより承ります。</p>
+      <h2>まずは、話を聞かせてください。</h2>
+      <p>工事のご相談も、採用のご応募も、見積依頼も。ちゃんと、お返事します。</p>
     </div>
     <div class="cta-actions reveal">
       <a class="btn" href="mailto:info@example.jp">お問い合わせフォーム<span class="arrow">→</span></a>
-      <a class="btn btn-outline" href="tel:0479482265">お電話で 0479-48-2265<span class="arrow">→</span></a>
+      <a class="btn btn-outline" href="tel:0479482265">お電話 0479-48-2265<span class="arrow">→</span></a>
     </div>
   </div>
 </section>
