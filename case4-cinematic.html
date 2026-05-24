@@ -1008,16 +1008,10 @@
 </footer>
 
 <script>
-  // スクロールフェードイン
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // 案4 ではアニメーションを case4-motion.js に一任するため、案2 から継承した
+  // .reveal 用 IntersectionObserver は削除（ダブル発火による表示崩れを防ぐ）。
+  // 代わりに .reveal クラスを最初から `.in` 状態にしておく（CSS で opacity:1 になる）。
+  document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
 
   // モバイル: ナビ閉じる
   document.querySelectorAll('#nav a').forEach((a) => {
